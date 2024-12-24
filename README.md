@@ -1,43 +1,6 @@
 # Micro Instagram
 
-Micro Instagram is a minimalistic social media application built with a React frontend and an Express backend. The application allows users to create and manage posts and users.
-
-## Project Structure
-
-micro-instagram/
-├── backend/
-│ ├── .env
-│ ├── package.json
-│ ├── prisma/
-│ │ ├── migrations/
-│ │ │ ├── 20241224135603_init/
-│ │ │ │ └── migration.sql
-│ │ │ └── migration_lock.toml
-│ │ └── schema.prisma
-│ └── src/
-│ └── index.js
-└── frontend/
-├── .gitignore
-├── eslint.config.js
-├── index.html
-├── package.json
-├── public/
-├── README.md
-├── src/
-│ ├── App.css
-│ ├── App.jsx
-│ ├── components/
-│ │ ├── PostForm.jsx
-│ │ ├── PostsList.jsx
-│ │ ├── UserForm.jsx
-│ │ └── UsersList.jsx
-│ ├── index.css
-│ └── main.jsx
-└── vite.config.js
-
-# Micro Instagram
-
-Micro Instagram is a simplified social media application built using modern web development technologies. It provides basic functionality for user and post management, with a clean and modular architecture.
+Micro Instagram is a minimalistic and simplified social media application built with a React frontend and an Express backend. It provides basic functionality for user and post management, with a clean and modular architecture.
 
 ## Features
 
@@ -110,7 +73,7 @@ Ensure you have the following installed on your system:
      ```
 5. Start the server:
    ```bash
-   npm start
+   node src/index.js
    ```
    The server will be running on `http://localhost:3000`.
 
