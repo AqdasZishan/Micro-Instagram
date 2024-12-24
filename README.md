@@ -130,14 +130,13 @@ micro-instagram/
     ├── public/
     ├── README.md
     ├── src/
-    │ ├── App.css
-    │ ├── App.jsx
     │ ├── assets/
     │ ├── components/
     │ │ ├── PostForm.jsx
     │ │ ├── PostsList.jsx
     │ │ ├── UserForm.jsx
     │ │ └── UsersList.jsx
+    │ ├── App.jsx
     │ ├── index.css
     │ └── main.jsx
     └── vite.config.js
