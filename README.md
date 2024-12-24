@@ -21,9 +21,11 @@ Micro Instagram is a minimalistic and simplified social media application built 
   - User list.
   - Post list.
   - Post creation form.
+  - User creation form
 - Axios integration for seamless API communication.
 - Components:
   - `UsersList` to display all users.
+  - `UsersForm` to create new users.
   - `PostsList` to display all posts.
   - `PostForm` to create new posts.
 
@@ -95,10 +97,12 @@ Ensure you have the following installed on your system:
 ### Users
 
 - **GET /users**: Retrieve all users.
+- **DELETE /users/:userId**: Delete an user.
 
 ### Posts
 
 - **GET /posts**: Retrieve all posts.
+- **GET /posts/:postId**: Retrieve a single post.
 - **POST /user/:userId/posts**: Create a new post for a user.
 - **PUT /posts/:postId**: Edit an existing post.
 - **DELETE /posts/:postId**: Delete a post.
@@ -138,6 +142,70 @@ micro-instagram/
     │ └── main.jsx
     └── vite.config.js
 ```
+## Chanlenges Faced
+### **1. Schema Adjustments**
+- Adjusting the Prisma schema to align with MySQL database constraints:
+  - Ensuring correct data types (`@db.Text`, `@db.VarChar`) for compatibility with MySQL.
+  - Ensuring the correct changes and migration timely.
+
+### **2. API Design**
+- Implementing RESTful endpoints for:
+  - Retrieving user and post data.
+  - Adding and updating posts.
+  - Deleting posts with cascading effects (e.g., updating `postCount` for users).
+
+### **3. Handling Relations**
+- Managing `User` and `Post` relationships:
+  - Ensuring proper foreign key constraints and validations in Prisma.
+  - Testing CRUD operations while maintaining data integrity.
+
+### **4. Frontend-Backend Communication**
+- Integrating Axios for API requests in the React frontend.
+- Debugging issues with CORS configuration to allow communication between frontend and backend.
+
+### **5. State Management**
+- Handling state effectively in React components for lists of users and posts.
+- Ensuring reactivity when new data (e.g., posts) is added, updated, or deleted.
+
+### **6. Error Handling**
+- Implementing proper error handling in both backend and frontend:
+  - Returning meaningful error messages for failed database operations.
+  - Showing user-friendly alerts on the frontend for errors like invalid inputs or server issues.
+
+### **7. Deployment**
+- Deploying the backend server and MySQL database to a live environment:
+  - Configuring `.env` for environment-specific variables like `DATABASE_URL`.
+
+### **8. Post-Count Consistency**
+- Keeping `postCount` in sync when posts are created or deleted:
+  - Incrementing or decrementing the `postCount` field in `User` on post creation/deletion.
+  - Handling edge cases where posts are deleted directly from the database.
+
+### **9. Frontend Challenges**
+- Designing a simple yet functional UI for the application:
+  - Creating components for listing users and posts, and a form for creating posts.
+  - Adding validation to the form inputs (e.g., ensuring all required fields are filled).
+
+### **10. Images Field**
+- Storing and handling `images` as JSON in Prisma:
+  - Deciding on how to upload and manage multiple images for a post.
+  - Handling JSON parsing and storage in MySQL.
+
+### **11. Testing**
+- Testing all features thoroughly:
+  - Backend API endpoints using tools like Postman.
+  - Frontend user interactions to ensure smooth functionality.
+
+### **12. Learning Curve**
+- Understanding new tools and technologies:
+  - Gaining familiarity with Prisma ORM for database management.
+  - Learning how to set up routing in React using `react-router-dom`.
+  - Debugging issues related to relational database constraints and API integrations.
+
+### **13. Scaling Considerations**
+- Thinking ahead for scalability:
+  - Designing models to accommodate future features like comments, likes, or followers.
+  - Planning for database optimizations and indexing frequently queried fields.
 
 ## Future Enhancement Possibilities
 
