@@ -90,7 +90,7 @@ Ensure you have the following installed on your system:
    ```bash
    npm start
    ```
-   The frontend will be running on `http://localhost:3001`.
+   The frontend will be running.
 
 ## API Endpoints
 
